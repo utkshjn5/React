@@ -13,12 +13,22 @@ class App extends Component {
       { name: 'Jain', age: '26', id: 2 }
     ]
   }
-  addPerson=(component)=>{
+  addPerson = (component) => {
     component.id = Math.random();
-    let array = [...this.state.firstComponent,component];
+    let array = [...this.state.firstComponent, component];
     this.setState(
       {
-        firstComponent:array
+        firstComponent: array
+      }
+    )
+  }
+  deletePerson = (id) => {
+    let array = this.state.firstComponent.filter(component => {
+      return component.id !== id
+    });
+    this.setState(
+      {
+        firstComponent: array
       }
     )
   }
@@ -27,10 +37,10 @@ class App extends Component {
       <div className="App">
         <h1>Utkarsh Jain</h1>
 
-        <MyFirstComponent firstComponent={this.state.firstComponent} />
+        <MyFirstComponent firstComponent={this.state.firstComponent} deletePerson={this.deletePerson} />
         <MyFirstSelectComponent firstComponent={this.state.firstComponent} />
-        <MyFirstConditionalComponent firstComponent={this.state.firstComponent}/>
-        <MyFirstFormComponent addPerson={this.addPerson}/>
+        <MyFirstConditionalComponent firstComponent={this.state.firstComponent} />
+        <MyFirstFormComponent addPerson={this.addPerson} />
       </div>
     );
   }

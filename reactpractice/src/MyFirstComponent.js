@@ -1,12 +1,13 @@
 import React from 'react';
 
-const MyFirstComponent = ({ firstComponent }) => {
+const MyFirstComponent = ({ firstComponent, deletePerson }) => {
 
     const arrayList = firstComponent.map(component => {
         return (
             <div className="firstComponent" key={component.id}>
                 <div>{component.name}</div>
                 <div>{component.age}</div>
+                <button onClick={() => { deletePerson(component.id) }}>Delete</button>
             </div>
         )
     });
