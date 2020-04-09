@@ -13,6 +13,15 @@ class App extends Component {
       { name: 'Jain', age: '26', id: 2 }
     ]
   }
+  addPerson=(component)=>{
+    component.id = Math.random();
+    let array = [...this.state.firstComponent,component];
+    this.setState(
+      {
+        firstComponent:array
+      }
+    )
+  }
   render() {
     return (
       <div className="App">
@@ -21,7 +30,7 @@ class App extends Component {
         <MyFirstComponent firstComponent={this.state.firstComponent} />
         <MyFirstSelectComponent firstComponent={this.state.firstComponent} />
         <MyFirstConditionalComponent firstComponent={this.state.firstComponent}/>
-        <MyFirstFormComponent/>
+        <MyFirstFormComponent addPerson={this.addPerson}/>
       </div>
     );
   }
