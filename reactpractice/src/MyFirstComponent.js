@@ -7,7 +7,7 @@ const MyFirstComponent = ({ firstComponent, deletePerson }) => {
             <div className="firstComponent" key={component.id}>
                 <div>{component.name}</div>
                 <div>{component.age}</div>
-                <button onClick={() => { deletePerson(component.id) }}>Delete</button>
+                <button onClick={()=>{deletePerson(component.id)} }>Delete</button>
             </div>
         )
     });

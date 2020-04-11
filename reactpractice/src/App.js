@@ -3,7 +3,7 @@ import MyFirstComponent from './MyFirstComponent';
 import MyFirstSelectComponent from './MyFirstSelectComponent';
 import MyFirstConditionalComponent from './MyFirstConditionalComponent';
 import MyFirstFormComponent from './MyFirstFormComponent';
-
+import MyFirstTableComponent from './MyFirstTableComponent';
 
 class App extends Component {
 
@@ -41,6 +41,7 @@ class App extends Component {
         <MyFirstSelectComponent firstComponent={this.state.firstComponent} />
         <MyFirstConditionalComponent firstComponent={this.state.firstComponent} />
         <MyFirstFormComponent addPerson={this.addPerson} />
+        <MyFirstTableComponent userData={this.state.firstComponent} deleteUser={this.deletePerson}/>
       </div>
     );
   }
