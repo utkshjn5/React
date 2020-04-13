@@ -2,9 +2,9 @@ import React from 'react';
 
 const MyFirstSelectComponent = ({ firstComponent }) => {
 
-    const arrayList = firstComponent.map(component => {
+    const arrayList = firstComponent.map((component,index) => {
         return (
-            <option className="firstComponent" key={component.id}>
+            <option className="firstComponent" key={index}>
                 {component.name}
             </option>
         )

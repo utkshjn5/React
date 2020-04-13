@@ -1,9 +1,10 @@
 import React from 'react';
 
 const MyFirstTableComponent = ({ userData, deleteUser }) => {
-    const userList = userData.map(user => {
+    const userList = userData.map((user,index) => {
+        
         return (
-            <tr key={user.id}>
+            <tr key={index}>
                 <td>{user.name}</td>
                 <td>{user.age}</td>
                 <td><button onClick={() => { deleteUser(user.id) }}>Delete</button></td>

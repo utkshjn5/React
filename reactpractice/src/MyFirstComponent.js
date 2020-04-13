@@ -2,9 +2,9 @@ import React from 'react';
 
 const MyFirstComponent = ({ firstComponent, deletePerson }) => {
 
-    const arrayList = firstComponent.map(component => {
+    const arrayList = firstComponent.map((component,index) => {
         return (
-            <div className="firstComponent" key={component.id}>
+            <div className="firstComponent" key={index}>
                 <div>{component.name}</div>
                 <div>{component.age}</div>
                 <button onClick={()=>{deletePerson(component.id)} }>Delete</button>

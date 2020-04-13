@@ -14,13 +14,25 @@ class App extends Component {
     ]
   }
   addPerson = (component) => {
+    // var count=0
+    // const id = this.state.firstComponent.map(com =>{
+    //   count++;
+    //   return count;
+    // })
+    // var id = this.state.firstComponent.length;
+    // console.log(id);
+    
+    //component.id = id+1;
     component.id = Math.random();
+    alert(component.id);
     let array = [...this.state.firstComponent, component];
+    console.log(array);
     this.setState(
       {
         firstComponent: array
       }
     )
+    //console.log(this.state.firstComponent);
   }
   deletePerson = (id) => {
     let array = this.state.firstComponent.filter(component => {
